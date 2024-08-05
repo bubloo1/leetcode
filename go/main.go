@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	res := canBeEqual([]int{1, 2, 2, 3}, []int{1, 1, 2, 3})
-	fmt.Printf("the result is %t", res)
+	res := kthDistinct([]string{"d", "b", "c", "b", "c", "a"}, 2)
+	fmt.Printf("the result is %v", res)
 }
