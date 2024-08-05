@@ -2,49 +2,54 @@ from typing import List
 from collections import defaultdict
 class UnionFind:
     def __init__(self, n):
-        self.par = [i for i in range(n)]
-        self.rank = [1] * n
+        self.parent = [i for i in range(n)]
+        self.rank = [0 for i in range(n)]
+
+    def findParent(self,p):
+        p = self.parent[p]
+
+        while p != self.parent[p]:
+            self.parent[p] = self.parent[self.parent[p]]
+            p = self.parent[p]
+        return p
     
-    def find(self, x):
-        while x != self.par[x]:
-            self.par[x] = self.par[self.par[x]]
-            x = self.par[x]
-        return x
-    
-    def union(self, x1, x2):
-        p1, p2 = self.find(x1), self.find(x2)
-        if p1 == p2:
+    def union(self,a,b):
+        a,b = self.findParent(a), self.findParent(b)
+
+        if a == b:
             return False
-        if self.rank[p1] > self.rank[p2]:
-            self.par[p2] = p1
-            self.rank[p1] += self.rank[p2]
+        elif self.rank[a] > self.rank[b]:
+            self.parent[b] = a
+            self.rank[a] += self.rank[b]
         else:
-            self.par[p1] = p2
-            self.rank[p2] += self.rank[p1]
+            self.parent[a] = b
+            self.rank[b] += self.rank[a]
         return True
 
 class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
-        uf = UnionFind(len(accounts))
-        emailToAcc = {} # email -> index of acc
+        newUnionFindObj = UnionFind(len(accounts))
 
-        for i, a in enumerate(accounts):
-            for e in a[1:]:
-                if e in emailToAcc:
-                    uf.union(i, emailToAcc[e])
+        findEmailGroup = {}
+
+        for i, acc in enumerate(accounts):
+            for email in acc[1:]:
+                if email in findEmailGroup:
+                    newUnionFindObj.union(i, findEmailGroup[email])
                 else:
-                    emailToAcc[e] = i
-
-        emailGroup = defaultdict(list) # index of acc -> list of emails
-        for e, i in emailToAcc.items():
-            leader = uf.find(i)
-            emailGroup[leader].append(e)
-
+                    findEmailGroup[email] = i
+        
+        groupEmails = defaultdict(list)
+        for email,i in findEmailGroup.items():
+            leader = newUnionFindObj.findParent(i)
+            groupEmails[leader].append(email)
+        
         res = []
-        for i, emails in emailGroup.items():
+        for i, email in groupEmails.items():
             name = accounts[i][0]
-            res.append([name] + sorted(emailGroup[i])) # array concat
+            res.append([name] + sorted(groupEmails[i]))
         return res
+
 
                      
 
