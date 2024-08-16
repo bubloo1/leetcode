@@ -11,12 +11,12 @@ import (
 // }
 
 func main() {
-	// root := &TreeNode{Val: 5}
-	// root.Left = &TreeNode{Val: 1}
-	// root.Right = &TreeNode{Val: 4}
-	// root.Right.Left = &TreeNode{Val: 3}
-	// root.Right.Right = &TreeNode{Val: 6}
-	res := calculate("(1+(4+5+2)-3)+(6+8)")
+	// root := &TreeNode{Val: 3}
+	// root.Left = &TreeNode{Val: 9}
+	// root.Right = &TreeNode{Val: 20}
+	// root.Right.Left = &TreeNode{Val: 15}
+	// root.Right.Right = &TreeNode{Val: 7}
+	res := findDuplicate([]int{1, 3, 4, 2, 2})
 	fmt.Printf("the result is %v", res)
 	// var user = userDetails{
 	// 	name:   "bubloo",
