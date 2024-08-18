@@ -16,7 +16,7 @@ func main() {
 	// root.Right = &TreeNode{Val: 20}
 	// root.Right.Left = &TreeNode{Val: 15}
 	// root.Right.Right = &TreeNode{Val: 7}
-	res := findDuplicate([]int{1, 3, 4, 2, 2})
+	res := nthUglyNumber(10)
 	fmt.Printf("the result is %v", res)
 	// var user = userDetails{
 	// 	name:   "bubloo",
