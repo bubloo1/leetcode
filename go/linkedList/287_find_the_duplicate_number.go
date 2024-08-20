@@ -1,4 +1,4 @@
-package main
+package linkeList
 
 func findDuplicate(nums []int) int {
 

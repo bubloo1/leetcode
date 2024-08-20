@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func countBits(n int) []int {
 

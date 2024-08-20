@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func singleNumber(nums []int) int {
 	var res int = 0

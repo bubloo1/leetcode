@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go/leetcode/dp"
 )
 
 // type userDetails struct {
@@ -16,7 +17,7 @@ func main() {
 	// root.Right = &TreeNode{Val: 20}
 	// root.Right.Left = &TreeNode{Val: 15}
 	// root.Right.Right = &TreeNode{Val: 7}
-	res := nthUglyNumber(10)
+	res := dp.LengthOfLIS([]int{10, 9, 2, 5, 3, 7, 101, 18})
 	fmt.Printf("the result is %v", res)
 	// var user = userDetails{
 	// 	name:   "bubloo",

@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func reverseBits(num uint32) uint32 {
 	var res, bit uint32 = 0, 0

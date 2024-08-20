@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func hammingWeight(n int) int {
 	var res int = 0

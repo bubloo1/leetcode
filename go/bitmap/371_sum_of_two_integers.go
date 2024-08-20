@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func getSum(a int, b int) int {
 	for b != 0 {

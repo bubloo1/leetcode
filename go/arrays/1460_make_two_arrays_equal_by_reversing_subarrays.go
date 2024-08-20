@@ -1,4 +1,4 @@
-package main
+package arrays
 
 func canBeEqual(target []int, arr []int) bool {
 	var targetSet = make(map[int]int, len(arr))

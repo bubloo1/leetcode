@@ -1,4 +1,4 @@
-package main
+package bitmap
 
 func missingNumber(nums []int) int {
 	var res int = len(nums)
