@@ -10,18 +10,19 @@ func countSubstrings(s string) int {
 	for i := range dp {
 		dp[i] = make([]int, n)
 	}
+	// length 1
 	for i := 0; i < n; i++ {
 		dp[i][i] = 1
 		count += 1
 	}
-
+	// length 2
 	for i := range n - 1 {
 		if s[i] == s[i+1] {
 			dp[i][i+1] = 1
 			count += 1
 		}
 	}
-
+	// length more than 3 or more
 	for length := 3; length <= n; length++ {
 		for i := 0; i < n-length+1; i++ {
 			j := i + length - 1
