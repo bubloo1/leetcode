@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go/leetcode/dp"
+	"go/leetcode/arrays"
 )
 
 // type userDetails struct {
@@ -18,7 +18,7 @@ func main() {
 	// root.Right.Left = &TreeNode{Val: 15}
 	// root.Right.Right = &TreeNode{Val: 7}
 	// res := dp.IsInterleave("aabcc", "dbbca", "aadbbcbcac")
-	res := dp.IsInterleave("aabcc", "dbbca", "aadbbbaccc")
+	res := arrays.PlusOne([]int{7, 2, 8, 5, 0, 9, 1, 2, 9, 5, 3, 6, 6, 7, 3, 2, 8, 4, 3, 7, 9, 5, 7, 7, 4, 7, 4, 9, 4, 7, 0, 1, 1, 1, 7, 4, 0, 0, 6})
 	fmt.Printf("the result is %v", res)
 	// var user = userDetails{
 	// 	name:   "bubloo",
