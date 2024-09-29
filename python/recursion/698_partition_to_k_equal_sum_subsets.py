@@ -1,6 +1,7 @@
 from typing import List
 class Solution:
     def canPartitionKSubsets(self, nums: List[int], k: int) -> bool:
+        
         if sum(nums) % k != 0:
             return False
 
@@ -19,7 +20,6 @@ class Solution:
 
 
             for i in range(index,len(nums)):
-                
                 # skip duplicates if last same number was skipped
                 if i > 0 and (i - 1) not in visited and nums[i] == nums[i - 1]:
                     continue
@@ -36,8 +36,3 @@ class Solution:
             return False
 
         return backtrack(0,0,0)
-
-
-newObject = Solution()
-
-print(newObject.canPartitionKSubsets([10,5,5,4,3,6,6,7,6,8,6,3,4,5,3,7],8))
