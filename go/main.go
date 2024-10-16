@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go/leetcode/arrays"
+	"go/leetcode/bitmap"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := arrays.ConversStrinToNumber("1")
+	res := bitmap.SingleNumber([]int{1, 2, 1, 3, 2, 5})
 	fmt.Printf("the result is %v", res)
 
 }
