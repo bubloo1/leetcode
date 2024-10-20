@@ -21,7 +21,7 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := bitmap.SingleNumber([]int{1, 2, 1, 3, 2, 5})
+	res := bitmap.CountMaxOrSubsets([]int{3, 2, 1, 5})
 	fmt.Printf("the result is %v", res)
 
 }

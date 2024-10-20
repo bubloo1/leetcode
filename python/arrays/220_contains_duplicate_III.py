@@ -1,39 +1,53 @@
-from sortedcontainers import SortedSet
+
 from typing import List
 class Solution:
     def containsNearbyAlmostDuplicate(self, nums: List[int], indexDiff: int, valueDiff: int) -> bool:
 
-        if k <= 0 or t < 0:
+        if valueDiff < 0:
             return False
+        
+        buckets = {}
+        bucket_size = valueDiff + 1  # Bucket size should be t + 1 to account for zero difference
 
-        sorted_window = SortedList()
-
-        for i in range(len(nums)):
-            # Maintain a window of size k
-            if i > k:
-                sorted_window.remove(nums[i - k - 1])
-
-            # Calculate lower and upper bounds
-            lower_bound = nums[i] - t
-            upper_bound = nums[i] + t
-
-            # Check if there's any number in the sorted list that satisfies the condition
-            # We can find a range [lower_bound, upper_bound]
-            pos = sorted_window.bisect_left(lower_bound)
-
-            # Check if the found position is within bounds and the value is within upper_bound
-            if pos < len(sorted_window) and sorted_window[pos] <= upper_bound:
+        for i, num in enumerate(nums):
+            bucket_key = num // bucket_size
+            print(bucket_key,"bucketKey")
+            # Check if the current bucket already has a number
+            if bucket_key in buckets:
+                return True
+            
+            # Check the previous bucket
+            if (bucket_key - 1 in buckets and 
+                abs(num - buckets[bucket_key - 1]) < bucket_size):
                 return True
 
-            # Add the current number to the sorted list
-            sorted_window.add(nums[i])
+            # Check the next bucket
+            if (bucket_key + 1 in buckets and 
+                abs(num - buckets[bucket_key + 1]) < bucket_size):
+                return True
 
+            # Insert the current number into the bucket
+            buckets[bucket_key] = num
+
+            # Remove numbers that are out of the k range
+            if i >= indexDiff:
+                del buckets[nums[i - indexDiff] // bucket_size]
+        
         return False
 
-# Example usage
-nums = [1, 5, 9, 1, 5, 9]
-k = 2
-t = 3
+        # for i in range(len(nums)):
+        #     for j in range(i + 1,min(i + 1 + indexDiff, len(nums))):
+        #         if abs(nums[i] - nums[j]) <= valueDiff:
+        #             return True
+        # return False 
+        # for i in range(len(nums)):
+        #     for j in range(i + 1,len(nums)):
+        #         if abs(i - j) <= indexDiff and abs(nums[i] - nums[j]) <= valueDiff:
+        #             return True
+        # return False 
+    
+
 newObject = Solution()
-res = newObject.containsNearbyAlmostDuplicate(nums, k, t)
-print("Contains nearby almost duplicate:", res)  # Output: False
+print(newObject.containsNearbyAlmostDuplicate(nums = [1,5,9,1,5,9], indexDiff = 2, valueDiff = 3))  
+
+ 
