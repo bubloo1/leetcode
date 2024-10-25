@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go/leetcode/bitmap"
+	"go/leetcode/dp"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := bitmap.CountMaxOrSubsets([]int{3, 2, 1, 5})
+	res := dp.FindAllConcatenatedWordsInADict([]string{"cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"})
 	fmt.Printf("the result is %v", res)
 
 }

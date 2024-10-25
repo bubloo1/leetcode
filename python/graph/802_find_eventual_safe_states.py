@@ -1,4 +1,5 @@
 from typing import List
+from collections import deque
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
         length_graph = len(graph)
