@@ -13,6 +13,7 @@ class Solution:
                 res.append(key[:i] + digit + key[i+1:])
                 digit = str((int(key[i]) + 10 - 1) % 10)
                 res.append(key[:i] + digit + key[i+1:]) 
+            print(res,"resssssss")
             return res
 
 
@@ -34,4 +35,5 @@ class Solution:
         return -1
 
 
-        
+newObject = Solution()
+print(newObject.openLock(deadends = ["0201","0101","0102","1212","2002"], target = "0202"))

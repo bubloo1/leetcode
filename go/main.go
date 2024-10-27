@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go/leetcode/dp"
+	"go/leetcode/arrays"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := dp.FindAllConcatenatedWordsInADict([]string{"cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"})
+	res := arrays.MinSubArrayLen(7, []int{2, 3, 1, 2, 4, 3})
 	fmt.Printf("the result is %v", res)
 
 }
