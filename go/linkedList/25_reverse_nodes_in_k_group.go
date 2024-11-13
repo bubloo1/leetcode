@@ -27,7 +27,15 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		}
 
 		temp := groupPrev.Next
+		// After reversing the current group of nodes,
+		// kth is now the new head of the reversed group.
+		// last node of first group as head
 		groupPrev.Next = kth
+		//Once the current group is reversed, the groupPrev pointer needs to be
+		//moved to the end of the newly reversed group for the next iteration.
+		// first node of first group as first node of second group
+		//1 -> 2
+		//2 -> 1 second group will start after 1
 		groupPrev = temp
 	}
 	return dummy.Next

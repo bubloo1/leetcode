@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go/leetcode/arrays"
+	"go/leetcode/dp"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := arrays.MinSubArrayLen(7, []int{2, 3, 1, 2, 4, 3})
+	res := dp.MinInsertions("leetcode")
 	fmt.Printf("the result is %v", res)
 
 }

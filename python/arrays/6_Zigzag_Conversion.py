@@ -12,7 +12,7 @@ class Solution:
             if current_row == 0 or current_row == numRows - 1:
                 going_down = not going_down
             current_row += 1 if going_down else -1
-
+        print(rows,"rows")
         return ''.join(rows)
     
 
