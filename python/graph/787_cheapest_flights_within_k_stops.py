@@ -30,5 +30,3 @@ class Solution:
         if dist[dst] == float('inf'):
             return -1
         return dist[dst]
-
-

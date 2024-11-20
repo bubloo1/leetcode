@@ -7,20 +7,20 @@ console.log("Hello World!")
 
 
 // function myArray (array: string[], callback: (arg0: string,arg1: boolean) => void) {
-//     for(let ele of array){
-//         callback(ele,true)
-//     }
+//     array.forEach((name: string) => {
+//         callback(name,true)
+//     })
 // }
 
 
 
-// function userDetails<T>(details:T): string {
+// function userDetails<T>(details:T): T {
 
-//     return "the details are" + details
+//     return ("the details are of" + details) as T
 // }
 
 // const res = userDetails<string>("bubloo")
-
+// console.log(res)
 // let myMap = new Map<string, number[]>()
 
 // myMap.set("bubloo", [24,1234,234])
@@ -32,20 +32,20 @@ console.log("Hello World!")
 // console.log(myMap.get("bubloo"))
 
 
-function myPromise () {
-   return new Promise((resolve,reject) => {
-        const x = true
-        if (x) {
-            resolve("nice!")
-        }else{
-            reject("failed")
-        }
-    })
-}
+// function myPromise () {
+//    return new Promise((resolve,reject) => {
+//         const x = true
+//         if (x) {
+//             resolve("nice!")
+//         }else{
+//             reject("failed")
+//         }
+//     })
+// }
 
-myPromise().then((result)=> {
-    console.log(result)
-})
+// myPromise().then((result)=> {
+//     console.log(result)
+// })
 
 // const fs = require('fs')
 
@@ -58,7 +58,41 @@ myPromise().then((result)=> {
 // })
 
 
-function getPassword() {
-    var randPassword = Array(8).fill("1234567890").map(function (x) { return x[Math.floor(Math.random() * x.length)] }).join('');
-    return randPassword;
+// function getPassword() {
+//     var randPassword = Array(8).fill("1234567890").map(function (x) { return x[Math.floor(Math.random() * x.length)] }).join('');
+//     return randPassword;
+// }
+
+// class NewClass {
+//     name: string;
+//     age: number;
+
+//     constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+// }
+
+
+// let newObject = new NewClass("bubloo",24)
+
+// console.log(newObject)
+
+
+function createCounter() {
+    let count = 0; // `count` is a private variable
+
+    return function() {
+        count += 1;
+        return count;
+    };
 }
+
+const counter1 = createCounter();
+console.log(counter1()); // Output: 1
+console.log(counter1()); // Output: 2
+console.log(counter1()); // Output: 3
+
+const counter2 = createCounter();
+console.log(counter2()); // Output: 1
+console.log(counter2()); // Output: 2
