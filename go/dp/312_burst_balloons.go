@@ -18,7 +18,7 @@ func maxCoins(nums []int) int {
 		dp[[2]int{left, right}] = 0
 
 		for i := left; i < right+1; i++ {
-
+			// logic here is we will pop this eleemnt last
 			coins := nums[left-1] * nums[i] * nums[right+1]
 
 			coins += dfs(left, i-1) + dfs(i+1, right)

@@ -55,3 +55,39 @@ func ConversStrinToNumber(num string) int {
 // 		fmt.Println(shape.area())
 // 	}
 // }
+
+///////////// contest 144 //////////
+
+// func CanAliceWin(n int) bool {
+// 	currStones := 10
+// 	hasAliceWon := false
+// 	for currStones <= n {
+// 		n -= currStones
+// 		currStones--
+// 		hasAliceWon = !hasAliceWon
+// 	}
+
+// 	return hasAliceWon
+// }
+
+// func ShiftDistance(s string, t string, nextCost []int, previousCost []int) int64 {
+// cost := 0
+// for i := range s {
+// 	currSChar := s[i] - 'a'
+// 	currTChar := t[i] - 'a'
+
+// 	if s[i] == t[i] {
+// 		continue
+// 	} else if nextCost[currChar] <= previousCost[currChar] {
+// 		cost += nextCost[currChar] * int(t[i]-s[i])
+// 		fmt.Println(int(t[i]-s[i]), "next")
+// 		currChar++
+// 	} else {
+// 		cost += previousCost[currChar] * int(t[i]-s[i])
+// 		fmt.Println(int(t[i]-s[i]), "prev")
+// 		currChar--
+// 	}
+// }
+
+// 	return int64(12)
+// }

@@ -96,3 +96,13 @@ console.log(counter1()); // Output: 3
 const counter2 = createCounter();
 console.log(counter2()); // Output: 1
 console.log(counter2()); // Output: 2
+
+
+
+function addNumber <T>(num1:T,num2: T) {
+    console.log(num1,num2)
+}
+
+const res = addNumber<number>(2,5)
+
+console.log(res,"res")

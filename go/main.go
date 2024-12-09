@@ -21,7 +21,12 @@ func main() {
 	// }()
 
 	// wg.Wait()
-	res := arrays.MinZeroArray([]int{2, 0, 2}, [][]int{{0, 2, 1}, {0, 2, 1}, {1, 1, 3}})
+	// root := &trees.TreeNode{Val: 3}
+	// root.Left = &trees.TreeNode{Val: 1}
+	// root.Right = &trees.TreeNode{Val: 4}
+	// root.Right.Left = &trees.TreeNode{Val: 2}
+
+	res := arrays.LargestAltitude([]int{-4, -3, -2, -1, 4, 3, 2})
 	fmt.Printf("the result is %v", res)
 
 }

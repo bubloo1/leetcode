@@ -7,11 +7,11 @@ type RandomizedSet struct {
 	itemsList []int
 }
 
-func Constructor() RandomizedSet {
-	return RandomizedSet{
-		itemsSet: make(map[int]int),
-	}
-}
+// func Constructor() RandomizedSet {
+// 	return RandomizedSet{
+// 		itemsSet: make(map[int]int),
+// 	}
+// }
 
 func (this *RandomizedSet) Insert(val int) bool {
 

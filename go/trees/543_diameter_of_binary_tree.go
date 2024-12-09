@@ -1,17 +1,17 @@
 package trees
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
 
-func diameterOfBinaryTree(root *TreeNode) int {
+// func diameterOfBinaryTree(root *TreeNode) int {
 
-	maxLength := 0
-	dfs(root, &maxLength)
-	return maxLength
-}
+// 	maxLength := 0
+// 	dfs(root, &maxLength)
+// 	return maxLength
+// }
 
 // func dfs(rootNode *TreeNode, maxLength *int) int {
 // 	if rootNode == nil {
