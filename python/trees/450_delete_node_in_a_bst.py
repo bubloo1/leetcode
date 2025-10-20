@@ -20,7 +20,7 @@ class Solution:
             elif not root.right:
                 return root.left
             
-            # find the minimum from right subtree
+            # find the minimum from right subtree bescase that would be the smallest value on right but greater than left values
             cur = root.right
             while cur.left:
                 cur = cur.left
